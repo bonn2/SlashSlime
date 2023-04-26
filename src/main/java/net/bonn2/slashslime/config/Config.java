@@ -2,6 +2,8 @@ package net.bonn2.slashslime.config;
 
 import de.exlll.configlib.*;
 import net.bonn2.slashslime.SlashSlime;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
 
@@ -15,6 +17,12 @@ public class Config {
 
     @Comment({"Where the message should be displayed", "Valid options: CHAT, ACTION_BAR"})
     public String messageLocation = "CHAT";
+
+    @Comment({"If /slime should cost anything"})
+    public boolean cost = true;
+
+    @Comment({"What item checking a slime chunk costs."})
+    public ItemStack price = new ItemStack(Material.SLIME_BALL, 1);
 
     public static void load() {
         instance = new Config();
