@@ -1,15 +1,18 @@
 package net.bonn2.slashslime;
 
-import de.exlll.configlib.ConfigLib;
-import de.exlll.configlib.YamlConfigurationProperties;
+import net.bonn2.slashslime.commands.Slime;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SlashSlime extends JavaPlugin {
 
+    public static SlashSlime plugin;
+
     @Override
     public void onEnable() {
-        // Plugin startup logic
-        YamlConfigurationProperties bukkitDefaultProperties = ConfigLib.BUKKIT_DEFAULT_PROPERTIES;
+        plugin = this;
+        // Register commands
+        Bukkit.getServer().getCommandMap().register("slashslime", new Slime());
     }
 
     @Override
