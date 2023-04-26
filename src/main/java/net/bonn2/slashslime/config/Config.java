@@ -24,6 +24,9 @@ public class Config {
     @Comment({"What item checking a slime chunk costs."})
     public ItemStack price = new ItemStack(Material.SLIME_BALL, 1);
 
+    @Comment({"Should SlashSlime check for updates on startup. It will not auto-download the update"})
+    public boolean checkForUpdates = true;
+
     public static void load() {
         instance = new Config();
         YamlConfigurationProperties properties = ConfigLib.BUKKIT_DEFAULT_PROPERTIES.toBuilder()
