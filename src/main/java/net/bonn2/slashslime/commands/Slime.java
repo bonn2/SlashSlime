@@ -1,7 +1,9 @@
 package net.bonn2.slashslime.commands;
 
 import net.bonn2.slashslime.SlashSlime;
+import net.bonn2.slashslime.config.Config;
 import net.bonn2.slashslime.util.Messages;
+import net.kyori.adventure.chat.ChatType;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginIdentifiableCommand;
@@ -11,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Slime extends Command implements PluginIdentifiableCommand {
 
@@ -32,11 +35,20 @@ public class Slime extends Command implements PluginIdentifiableCommand {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
         if (sender instanceof Player player) {
-            player.sendMessage(
-                    player.getLocation().getChunk().isSlimeChunk() ?
-                            Messages.get("is-slime-chunk") :
-                            Messages.get("not-slime-chunk")
-            );
+            switch (Config.instance.messageLocation.toUpperCase(Locale.ROOT)) {
+                case "CHAT" ->
+                        player.sendMessage(
+                                player.getLocation().getChunk().isSlimeChunk() ?
+                                        Messages.get("is-slime-chunk") :
+                                        Messages.get("not-slime-chunk"));
+                case "ACTION_BAR" ->
+                        player.sendActionBar(
+                                player.getLocation().getChunk().isSlimeChunk() ?
+                                        Messages.get("is-slime-chunk") :
+                                        Messages.get("not-slime-chunk"));
+            }
+        } else {
+            sender.sendMessage(Messages.get("only-players"));
         }
         return true;
     }

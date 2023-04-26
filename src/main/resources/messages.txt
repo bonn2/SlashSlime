@@ -1,2 +1,3 @@
+only-players=Only players can use this command!
 is-slime-chunk=This is a slime chunk
 not-slime-chunk=Not a slime chunk
