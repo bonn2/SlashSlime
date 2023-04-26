@@ -3,7 +3,6 @@ package net.bonn2.slashslime.commands;
 import net.bonn2.slashslime.SlashSlime;
 import net.bonn2.slashslime.config.Config;
 import net.bonn2.slashslime.util.Messages;
-import net.kyori.adventure.chat.ChatType;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginIdentifiableCommand;
