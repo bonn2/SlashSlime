@@ -1,6 +1,7 @@
 package net.bonn2.slashslime;
 
 import net.bonn2.slashslime.commands.Slime;
+import net.bonn2.slashslime.util.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,6 +12,10 @@ public final class SlashSlime extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+
+        // Load init data from file
+        Messages.load();
+
         // Register commands
         Bukkit.getServer().getCommandMap().register("slashslime", new Slime());
     }

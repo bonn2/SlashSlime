@@ -1,6 +1,7 @@
 package net.bonn2.slashslime.commands;
 
 import net.bonn2.slashslime.SlashSlime;
+import net.bonn2.slashslime.util.Messages;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginIdentifiableCommand;
@@ -31,7 +32,11 @@ public class Slime extends Command implements PluginIdentifiableCommand {
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
         if (sender instanceof Player player) {
-            player.sendPlainMessage(player.getLocation().getChunk().isSlimeChunk() ? "true" : "false");
+            player.sendMessage(
+                    player.getLocation().getChunk().isSlimeChunk() ?
+                            Messages.get("is-slime-chunk") :
+                            Messages.get("not-slime-chunk")
+            );
         }
         return true;
     }
