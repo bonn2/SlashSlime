@@ -5,6 +5,7 @@ api-version: 1.19
 authors: [ bonn2 ]
 description: Adds a configurable /slime command to check for slime chunks
 loader: net.bonn2.slashslime.SlashSlimeLoader
+folia-supported: true
 permissions:
   slashslime.use:
     description: Allows usage of /slime
