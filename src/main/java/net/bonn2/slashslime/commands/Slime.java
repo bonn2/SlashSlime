@@ -3,8 +3,6 @@ package net.bonn2.slashslime.commands;
 import net.bonn2.slashslime.SlashSlime;
 import net.bonn2.slashslime.config.Config;
 import net.bonn2.slashslime.util.Messages;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginIdentifiableCommand;
