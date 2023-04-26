@@ -1,0 +1,6 @@
+name: SlashSlime
+version: '${version}'
+main: net.bonn2.slashslime.SlashSlime
+api-version: 1.19
+authors: [ bonn2 ]
+description: Adds a configurable /slime command to check for slime chunks
