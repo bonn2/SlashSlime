@@ -27,6 +27,9 @@ public class Config {
     @Comment({"Should SlashSlime check for updates on startup. It will not auto-download the update"})
     public boolean checkForUpdates = true;
 
+    @Comment({"Set this to false to disable bStats usage reporting."})
+    public boolean enableBStats = true;
+
     public static void load() {
         instance = new Config();
         YamlConfigurationProperties properties = ConfigLib.BUKKIT_DEFAULT_PROPERTIES.toBuilder()

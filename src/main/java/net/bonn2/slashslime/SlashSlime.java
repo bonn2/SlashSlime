@@ -3,6 +3,7 @@ package net.bonn2.slashslime;
 import net.bonn2.slashslime.commands.Slime;
 import net.bonn2.slashslime.config.Config;
 import net.bonn2.slashslime.util.Messages;
+import net.bonn2.slashslime.util.Metrics;
 import net.bonn2.slashslime.util.ModrinthUpdateChecker;
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
@@ -31,6 +32,12 @@ public final class SlashSlime extends JavaPlugin {
 
         // Register commands
         Bukkit.getServer().getCommandMap().register("slashslime", new Slime());
+
+        // Enable bStats
+        if (Config.instance.enableBStats) {
+            getLogger().info("Enabling bStats, thanks it really helps!");
+            new Metrics(this, 18307);
+        }
 
         // Check for updates
         if (Config.instance.checkForUpdates) {
