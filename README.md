@@ -4,7 +4,8 @@ A simple and configurable `/slime` plugin that is compatible with Paper / Purpur
 ## Features
 - Fully customizable messages
 - Full permission support
-- `paper-plugin` dependencies for a tiny .jar size
+- Item based cost
+- Folia support
 
 ## Commands / Permissions
 | Command  | Permission       | Default | Description                                                            |
