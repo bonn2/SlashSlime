@@ -3,6 +3,8 @@ package net.bonn2.slashslime.commands;
 import net.bonn2.slashslime.SlashSlime;
 import net.bonn2.slashslime.config.Config;
 import net.bonn2.slashslime.util.Messages;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.PluginIdentifiableCommand;
@@ -84,6 +86,7 @@ public class Slime extends Command implements PluginIdentifiableCommand {
                             player.getLocation().getChunk().isSlimeChunk() ?
                                     Messages.get("is-slime-chunk") :
                                     Messages.get("not-slime-chunk"));
+            default -> SlashSlime.plugin.getLogger().warning("messageLocation is set to an invalid value!");
         }
     }
 
