@@ -23,7 +23,7 @@ repositories {
 
 dependencies {
     compileOnly 'dev.folia:folia-api:1.19.4-R0.1-SNAPSHOT'
-    compileOnly 'com.github.Exlll.ConfigLib:configlib-paper:4.2.0'
+    compileOnly 'com.github.Exlll.ConfigLib:configlib-paper:4.5.0'
 }
 
 def targetJavaVersion = 17
